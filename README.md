@@ -15,4 +15,5 @@ P.S. it also works with OPTIONS page fields and in the loop:
 [![ACF FRONT END EDITOR](http://horiondigital.com/hostedimages/acffront2.gif)](http://www.youtube.com/watch?v=rb9rsLaDImc)
 
 Add-on author: Audrius Rackauskas @ [Horion Digital, Ltd](http://www.horiondigital.com) 
+
 ACF plugin author: [Elliot Condon](http://www.elliotcondon.com/)
