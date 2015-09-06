@@ -8,4 +8,4 @@ Plugin is in early stages, code needs a bit of cleaning, but it does its job and
 
 Have fun.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rb9rsLaDImc" frameborder="0" allowfullscreen></iframe>
+[![ACF FRONT END EDITOR](http://img.youtube.com/vi/rb9rsLaDImc/0.jpg)](http://www.youtube.com/watch?v=rb9rsLaDImc)
