@@ -10,7 +10,7 @@ Plugin is in early stages, code needs a bit of cleaning, but it does its job and
 
 Have fun.
 
-P.S. it also works with OPTIONS page fields and in the loop:
+P.S. it also works with OPTIONS page fields, in the LOOP, with repeaters and flexible content:
 
 [![ACF FRONT END EDITOR](http://horiondigital.com/hostedimages/acffront2.gif)](http://www.youtube.com/watch?v=rb9rsLaDImc)
 
