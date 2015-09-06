@@ -7,3 +7,5 @@ It allows admins to edit text fields, textareas and wysiwyg fields from front en
 Plugin is in early stages, code needs a bit of cleaning, but it does its job and doesn't collude with other plugins.
 
 Have fun.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rb9rsLaDImc" frameborder="0" allowfullscreen></iframe>
