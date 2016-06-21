@@ -13,9 +13,9 @@
 	    var textInputs = $('[contenteditable]');
 	    textInputs.each(function() {
 	    	var contents =$(this).html();
-	    	$(this).live('focus', function() {
+	    	$(this).on('focus', function() {
 	    		// console.log($(this).html());
-	    	}).live('blur', function() {
+	    	}).on('blur', function() {
 	    		// console.log($(this).html());
 	    		if (contents!=$(this).html()){
 	    	    $(this).addClass('textChanged');
@@ -27,7 +27,7 @@
 	    });
     });
 
-	$('#wp-admin-bar-edit-live').live('click',function() {
+	$('#wp-admin-bar-edit-live').on('click',function() {
 		var editableText = $('[contenteditable].textChanged');
 		var textString = [];
 		editableText.each(function() {
