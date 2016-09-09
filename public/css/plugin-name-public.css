@@ -1,8 +1,0 @@
-/**
- * All of the CSS for your public-facing functionality should be
- * included in this file.
- */
-
- [contenteditable] {outline: none !important;}
- #wpadminbar #wp-admin-bar-edit-live>.ab-item:before{content: '\f464';top: 2px;}
- .alert-on-top {position: absolute;top: 50%;left: 50%;margin-left: -140px;margin-top: -26px;z-index: 999;}

@@ -5,11 +5,11 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       http://example.com
+ * @link       http://www.horiondigital.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/admin/partials
+ * @package    Acf_Front_End_Editor
+ * @subpackage Acf_Front_End_Editor/admin/partials
  */
 ?>
 

@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
+ * @link       http://www.horiondigital.com
  * @since      1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    Acf_Front_End_Editor
+ * @subpackage Acf_Front_End_Editor/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    Acf_Front_End_Editor
+ * @subpackage Acf_Front_End_Editor/includes
+ * @author     Audrius Rackauskas <audrius@horiondigital.com>
  */
-class Plugin_Name_Activator {
+class Acf_Front_End_Editor_Activator {
 
 	/**
 	 * Short Description. (use period)

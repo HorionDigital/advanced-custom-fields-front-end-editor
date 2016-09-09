@@ -1,0 +1,17 @@
+ [contenteditable] {outline: none !important;}
+ #wpadminbar #wp-admin-bar-edit-live>.ab-item:before{content: '\f464';top: 2px;}
+
+.hd-pop {
+  position: fixed;
+  min-width: 300px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #FBFBFB;
+  line-height: 50px;
+  font-weight: 700;
+  top: 20px;
+  right: 20px;
+  border-radius: 6px;
+  padding: 10px 30px;
+  font-size: 16px;
+  z-index: 999;
+}
