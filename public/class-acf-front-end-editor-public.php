@@ -143,7 +143,7 @@ class Acf_Front_End_Editor_Public {
      * @since 2.0.0
      */
     public function register_filters() {
-        if(is_user_logged_in()):
+        if(is_user_logged_in() && !is_admin()):
             add_filter('acf/load_value/type=text',  array( $this, 'acf_targeter'), 10, 3);
             add_filter('acf/load_value/type=textarea', array( $this, 'acf_targeter'), 10, 3);
             add_filter('acf/load_value/type=wysiwyg', array( $this, 'acf_wysiwyg_targeter'), 10, 3);
