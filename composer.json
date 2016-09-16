@@ -1,0 +1,21 @@
+{
+    "name": "horiondigital/advanced-custom-fields-front-end-editor",
+    "description": "Add on for advanced custom fields plugin which allow to edit text fields, text areas and wysiwyg fields via front end magically",
+    "keywords": ["wordpress", "plugin", "acf", "advanced-custom-fields"],
+    "homepage": "https://github.com/HorionDigital/advanced-custom-fields-front-end-editor",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+              "name": "Audrius Rackauskas",
+              "homepage": "http://www.horiondigital.com"
+        }
+    ],
+    "support"    : {
+            "issues": "https://github.com/HorionDigital/advanced-custom-fields-front-end-editor/issues",
+            "source": "https://github.com/HorionDigital/advanced-custom-fields-front-end-editor"
+    },
+    "type": "wordpress-plugin",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
