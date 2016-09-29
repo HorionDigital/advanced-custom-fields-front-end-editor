@@ -138,6 +138,39 @@ class Acf_Front_End_Editor_Public {
     }
 
     /**
+     * Renders title fields with additional html that allows to target these aread via javascript
+     * @param  [String] $title
+     * @param  [Int] $id
+     * @return [String]
+     */
+    function wp_title_targeter($title, $id = null) {
+        $value = '<d contenteditable data-postid="'.$id.'" data-name="wp_hd_title" data-key="wp_core">'.$title.'</d>';
+        return $value;
+    }
+
+    /**
+     * Renders content fields with additional html that allows to target these aread via javascript
+     * @param  [String] $title
+     * @param  [Int] $id
+     * @return [String]
+     */
+    function wp_content_targeter($content) {
+        $value = '<div contenteditable class="editableHD" data-postid="'.get_the_ID().'" data-name="wp_hd_content" data-key="wp_core">'.$content.'</div>';
+        return $value;
+    }
+
+    /**
+     * Renders excerpt fields with additional html that allows to target these aread via javascript
+     * @param  [String] $title
+     * @param  [Int] $id
+     * @return [String]
+     */
+    function wp_excerpt_targeter($excerpt) {
+        $value = '<d contenteditable data-postid="'.get_the_ID().'" data-name="wp_hd_excerpt" data-key="wp_core">'.$excerpt.'</d>';
+        return $value;
+    }
+
+    /**
      * The options name to be used in this plugin
      *
      * @since   2.0.1
@@ -178,6 +211,9 @@ class Acf_Front_End_Editor_Public {
             add_filter('acf/format_value/type=text', array( $this, 'my_acf_format_value'), 10, 3);
             add_filter('acf/format_value/type=textarea', array( $this, 'my_acf_format_value'), 10, 3);
             add_filter('acf/format_value/type=wysiwyg', array( $this, 'my_acf_format_value'), 10, 3);
+            add_filter('the_title', array( $this, 'wp_title_targeter'), 10, 3);
+            add_filter('the_content', array( $this, 'wp_content_targeter'), 10, 3);
+            add_filter('get_the_excerpt', array( $this, 'wp_excerpt_targeter'), 10, 3);
         endif;
     }
 
@@ -190,7 +226,6 @@ class Acf_Front_End_Editor_Public {
         if ( isset($_REQUEST) ) {
             if(is_user_logged_in()):
 
-            $siteID   = $_REQUEST['siteID'];
             $textArr  = $_REQUEST['textArr'];
 
             foreach ($textArr as $arr):
@@ -198,10 +233,27 @@ class Acf_Front_End_Editor_Public {
                 $text = $arr[1];
                 $name = $arr[2];
                 $postid = $arr[3];
-                $obj = get_field_object($name,$postid);
-                $type = ($obj['key'] ? 'single' : 'repeater');
-                $acf_post = get_post( $obj['parent'] );
-                update_field($name, $text, $postid);
+                if($key == 'wp_core') {
+                    $hd_acf_post = array(
+                         'ID' => $postid,
+                    );
+
+                    switch ($name) {
+                        case 'wp_hd_title':
+                            $hd_acf_post['post_title'] = $text;
+                            break;
+                        case 'wp_hd_content':
+                            $hd_acf_post['post_content'] = $text;
+                            break;
+                        case 'wp_hd_excerpt':
+                            $hd_acf_post['post_excerpt'] = $text;
+                            break;
+                    }
+
+                    wp_update_post( $hd_acf_post );
+                } else {
+                    update_field($name, $text, $postid);
+                }
             endforeach;
             endif;
         }

@@ -56,7 +56,6 @@
             textInputs.each(function() {
                 var contents = $(this).html();
                 $(this).on('focus', function() {}).on('blur', function() {
-                    console.log('a');
                     if (contents != $(this).html()) {
                         $(this).addClass('textChanged');
                         $('#wp-admin-bar-edit-live a').text('Save unsaved progress');
@@ -94,7 +93,6 @@
                    url: meta.ajaxurl,
                    data: {
                        'action': 'update_texts',
-                       'siteID': meta.page.ID,
                        'textArr': textString
                    },
                    success: function(data) {
