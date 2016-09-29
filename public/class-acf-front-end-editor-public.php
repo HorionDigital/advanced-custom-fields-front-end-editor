@@ -137,13 +137,41 @@ class Acf_Front_End_Editor_Public {
         return $value;
     }
 
+    /**
+     * The options name to be used in this plugin
+     *
+     * @since   2.0.1
+     * @access  private
+     * @var     string      $option_name    Option name of this plugin
+     */
+    private $option_name = 'acf_front_end_editor';
+
+    /**
+     * Check if user has capabilities
+     *
+     * @since  2.0.1
+     */
+    
+    private function user_has_capabilities($capabilities) {
+        if(!isset($capabilities) || empty($capabilities) || is_null($capabilities)) {
+            return true;
+        }
+        $caps = json_decode($capabilities, true);
+        $allow = true;
+        if(!current_user_can( $caps[0] )) {
+            $allow = false;
+        }
+
+        return $allow;
+    }
+    
 
     /**
      * Registers filters required for ACF field rendering
      * @since 2.0.0
      */
     public function register_filters() {
-        if(is_user_logged_in() && !is_admin()):
+        if(is_user_logged_in() && !is_admin() && $this->user_has_capabilities(get_option( $this->option_name . '_capabilities'))):
             add_filter('acf/load_value/type=text',  array( $this, 'acf_targeter'), 10, 3);
             add_filter('acf/load_value/type=textarea', array( $this, 'acf_targeter'), 10, 3);
             add_filter('acf/load_value/type=wysiwyg', array( $this, 'acf_wysiwyg_targeter'), 10, 3);
