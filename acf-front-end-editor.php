@@ -9,7 +9,7 @@
  * Plugin Name:       ACF Front End Editor
  * Plugin URI:        https://github.com/HorionDigital/advanced-custom-fields-front-end-editor
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           2.0.1
+ * Version:           2.0.2
  * Author:            Horion Digital
  * Author URI:        http://www.horiondigital.com
  * License:           GPL-2.0+
