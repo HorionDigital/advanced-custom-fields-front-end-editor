@@ -15,3 +15,8 @@
   font-size: 16px;
   z-index: 999;
 }
+
+[contenteditable]:empty {
+    display: block;
+    height: 1em;
+}
