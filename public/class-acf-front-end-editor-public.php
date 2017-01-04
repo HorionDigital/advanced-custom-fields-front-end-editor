@@ -103,6 +103,12 @@ class Acf_Front_End_Editor_Public {
 		$original_value = $value;
 		$return_value   = '';
 
+		$deactivate = apply_filters( 'acf_front_end_editor_acf_targeter_deactivate', false, $value, $post_id, $field );
+
+		if ( true === $deactivate ) {
+			return $original_value;
+		}
+
 		if ( strpos( $original_value, 'http' ) === 0 || $original_value == '#' || $original_value == '' || filter_var( $original_value, FILTER_VALIDATE_EMAIL ) || is_admin() ) {
 			$return_value = $original_value;
 		} else {
@@ -111,8 +117,6 @@ class Acf_Front_End_Editor_Public {
 			$type         = 'labas';
 			$return_value = '<d contenteditable data-postid="' . $post_id . '" data-name="' . $label . '" data-key="' . $field['key'] . '">' . $original_value . '</d>';
 		}
-
-		$return_value = apply_filters( 'acf_front_end_editor_acf_targeter_value', $return_value, $original_value, $post_id, $field );
 
 		return $return_value;
 	}
@@ -135,8 +139,8 @@ class Acf_Front_End_Editor_Public {
 		if ( '' === trim( $value ) ) {
 			$return_value = $value;
 		} else {
-			$key   = $field['key'];
-			$label = $field['name'];
+			$key          = $field['key'];
+			$label        = $field['name'];
 			$return_value = '<div contenteditable class="editableHD" data-postid="' . $post_id . '" data-name="' . $label . '" data-key="' . $field['key'] . '"><p></p>' . $value . '</div>';
 		}
 
