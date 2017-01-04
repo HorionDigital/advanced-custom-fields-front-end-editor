@@ -98,7 +98,7 @@ class Acf_Front_End_Editor_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function acf_targeter( $value, $post_id, $field ) {
+	public function acf_targeter( $value, $post_id, $field ) {
 
 		$original_value = $value;
 		$return_value   = '';
